@@ -1,0 +1,9 @@
+<button
+  disabled={{@isDisabled}}
+  type={{@type}}
+  class={{if @isDisabled 'opacity-80 pointer-events-none' 'hover:bg-secondary'}}
+  class='w-full font-bold items-center bg-primary text-cream focus:outline-none focus:ring rounded px-4 py-2'
+  ...attributes
+>
+  {{yield}}
+</button>
