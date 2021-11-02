@@ -10,7 +10,6 @@ export default class GraphqlAuthenticator extends Base {
   async authenticate({ email, password }) {
     let variables = { email, password };
     const token = await this.apollo.mutate({ mutation, variables }, 'sign-in');
-    console.log('Token is', token);
     return token;
   }
 

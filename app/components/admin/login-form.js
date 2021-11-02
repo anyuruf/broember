@@ -8,10 +8,11 @@ export default class LoginFormComponent extends Component {
   @service session;
   @tracked email;
   @tracked password;
+  @tracked errorMessage;
 
   @action
-  async authenticate(e) {
-    e.preventDefault();
+  async authenticate(event) {
+    event.preventDefault();
     try {
       await this.session.authenticate(
         'authenticator:graphql',
@@ -24,6 +25,7 @@ export default class LoginFormComponent extends Component {
 
     if (this.session.isAuthenticated) {
       // What to do with all this success?
+      this.transitionToRoute('add-user');
     }
   }
 }

@@ -27,13 +27,6 @@ export default class OverridenApollo extends ApolloService {
     });
   }
 
-  clientOptions() {
-    return {
-      link: this.link(),
-      cache: this.cache,
-    };
-  }
-
   /**
    * This is the options hash that will be passed to the ApolloClient constructor.
    * You can override it if you wish to customize the ApolloClient.
