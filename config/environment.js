@@ -16,13 +16,6 @@ module.exports = function (environment) {
         Date: false,
       },
     },
-    apollo: {
-      apiURL: 'http://localhost:4000',
-      // Optionally, set the credentials property of the Fetch Request interface
-      // to control when a cookie is sent:
-      // requestCredentials: 'same-origin', // other choices: 'include', 'omit'
-    },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

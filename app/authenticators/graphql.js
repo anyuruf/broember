@@ -1,16 +1,27 @@
 import Base from 'ember-simple-auth/authenticators/base';
-import { queryManager } from 'ember-apollo-client';
-import mutation from 'app/gql/mutations/sign-in';
+import { useMutation } from 'glimmer-apollo';
+import { SIGN_IN } from 'app/gql/mutations/sign-in';
 
 export default class GraphqlAuthenticator extends Base {
-  @queryManager apollo;
-
   restore() {}
+
+  signIn = useMutation(this, () => [
+    SIGN_IN,
+    {
+      onComplete: (data) => {
+        console.log('Received token:', data);
+        return data;
+      },
+      onError: (error) => {
+        console.error('Received an error:', error.message);
+        return error.message;
+      },
+    },
+  ]);
 
   async authenticate({ email, password }) {
     let variables = { email, password };
-    const token = await this.apollo.mutate({ mutation, variables }, 'sign-in');
-    return token;
+    this.signIn.mutate({ variables });
   }
 
   invalidate() {}
