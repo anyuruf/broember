@@ -21,7 +21,7 @@ export default class GraphqlAuthenticator extends Base {
 
   async authenticate({ email, password }) {
     let variables = { email, password };
-    this.signIn.mutate({ variables });
+    this.signIn.mutate({ input: { variables } });
   }
 
   invalidate() {}
