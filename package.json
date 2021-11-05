@@ -32,6 +32,7 @@
     "autoprefixer": "^10.3.6",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
+    "ember-auto-import": "^2.2.3",
     "ember-cli": "~3.28.0",
     "ember-cli-app-version": "^5.0.0",
     "ember-cli-babel": "^7.26.6",
@@ -68,7 +69,8 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
-    "tailwindcss": "^2.2.16"
+    "tailwindcss": "^2.2.16",
+    "webpack": "^5.62.1"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
