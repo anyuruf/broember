@@ -8,7 +8,7 @@ import {
 export default function setupApolloClient(context) {
   // HTTP connection to the API
   const httpLink = createHttpLink({
-    uri: 'http://localhost:4000',
+    uri: 'http://localhost:4000/',
   });
 
   // Cache implementation

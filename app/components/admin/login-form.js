@@ -4,7 +4,6 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class LoginFormComponent extends Component {
-  @tracked errorMessage;
   @service session;
   @tracked email;
   @tracked password;
@@ -20,7 +19,7 @@ export default class LoginFormComponent extends Component {
         this.password
       );
     } catch (error) {
-      this.errorMessage = error.error || error;
+      this.errorMessage = error.message || error;
     }
 
     if (this.session.isAuthenticated) {

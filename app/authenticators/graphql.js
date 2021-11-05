@@ -14,7 +14,7 @@ export default class GraphqlAuthenticator extends Base {
       },
       onError: (error) => {
         console.error('Received an error:', error.message);
-        return error.message;
+        return error;
       },
     },
   ]);
