@@ -22,7 +22,7 @@ export default class GraphqlAuthenticator extends Base {
       },
     ]);
 
-    this.signIn.mutate();
+    await this.signIn.mutate();
   }
 
   invalidate() {}
