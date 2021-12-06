@@ -7,12 +7,10 @@ export default class extends Base {
     SIGN_IN,
     {
       onComplete: (data) => {
-        console.log('Received token:', data);
         return data;
       },
       onError: (error) => {
-        console.error('Error:', error.message);
-        throw new Error(error.message);
+        throw new Error(error);
       },
     },
   ]);
