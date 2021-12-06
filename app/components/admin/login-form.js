@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
-import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
 
 export default class LoginFormComponent extends Component {
   @service session;
@@ -10,8 +10,8 @@ export default class LoginFormComponent extends Component {
   @tracked errorMessage;
 
   @action
-  async authenticate(event) {
-    event.preventDefault();
+  async authenticate(e) {
+    e.preventDefault();
     try {
       await this.session.authenticate(
         'authenticator:graphql',
@@ -19,12 +19,11 @@ export default class LoginFormComponent extends Component {
         this.password
       );
     } catch (error) {
-      this.errorMessage = error.message || error;
+      this.errorMessage = error.error || error;
     }
 
     if (this.session.isAuthenticated) {
       // What to do with all this success?
-      this.transitionToRoute('add-user');
     }
   }
 }
