@@ -1,5 +1,6 @@
 import Base from 'ember-simple-auth/authenticators/base';
 import { useMutation } from 'glimmer-apollo';
+import { reject, resolve } from 'rsvp';
 import { SIGN_IN } from '../gql/mutations/sign-in';
 
 export default class extends Base {
@@ -14,6 +15,14 @@ export default class extends Base {
       },
     },
   ]);
+
+  restore(data) {
+    if (data) {
+      return resolve(data);
+    }
+
+    return reject();
+  }
 
   async authenticate(email, password) {
     await this.signIn.mutate({ email, password });
