@@ -7,7 +7,7 @@ module.exports = {
       secondary: '#244c60',
       charcoal: '#384640',
       cream: '#eff4f0',
-      primary: '#970c10',
+      primary: '#5e0700',
     },
   },
   plugins: [],
