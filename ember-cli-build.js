@@ -7,9 +7,6 @@ const tailwind = require('tailwindcss');
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
-    emberApolloClient: {
-      keepGraphqlFileExtension: false,
-    },
     postcssOptions: {
       compile: {
         plugins: [
