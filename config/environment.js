@@ -16,6 +16,11 @@ module.exports = function (environment) {
         Date: false,
       },
     },
+    'ember-simple-auth': {
+      authenticationRoute: 'login',
+      routeAfterAuthentication: 'index',
+      routeIfAlreadyAuthenticated: 'index',
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
