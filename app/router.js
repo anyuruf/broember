@@ -11,4 +11,8 @@ Router.map(function () {
   this.route('add-member');
   this.route('about');
   this.route('add-user');
+
+  this.route('user', function () {
+    this.route('profile');
+  });
 });
