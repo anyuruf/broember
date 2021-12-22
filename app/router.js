@@ -15,4 +15,8 @@ Router.map(function () {
   this.route('user', function () {
     this.route('profile');
   });
+  this.route('admin', function () {
+    this.route('add-user');
+    this.route('add-member');
+  });
 });
