@@ -10,5 +10,6 @@ module.exports = {
       primary: '#5e0700',
     },
   },
-  plugins: [],
+  variants: {},
+  plugins: [require('@tailwindcss/ui')],
 };
