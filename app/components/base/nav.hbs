@@ -57,7 +57,7 @@
             </button>
 
             <!-- Profile dropdown -->
-            <Base::Menus::basic />
+            <Base::Menus::basic @logout={{this.invalidateSession}} />
           </div>
         </div>
       {{/if}}
