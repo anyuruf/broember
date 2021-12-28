@@ -29,7 +29,6 @@
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
-    "apollo-link-context": "^1.0.20",
     "autoprefixer": "^10.3.6",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
