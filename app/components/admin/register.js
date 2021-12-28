@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { useMutation } from 'glimmer-apollo';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { SIGN_UP } from '../gql/mutations/sign-up';
+import { SIGN_UP } from '../../gql/mutations/sign-up';
 
 export default class AdminRegisterComponent extends Component {
   @tracked firstName;
@@ -22,4 +22,17 @@ export default class AdminRegisterComponent extends Component {
       },
     },
   ]);
+
+  @action
+  async createUser(e) {
+    e.preventDefault();
+
+    await this.SignUp.mutate({
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      role: this.role,
+      password: this.password,
+    });
+  }
 }
