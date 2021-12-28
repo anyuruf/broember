@@ -9,7 +9,7 @@ export const SIGN_UP = gql`
     $role: String
     $memAnchor: ID
   ) {
-    signIn(
+    signUP(
       firstName: $firstName
       lastName: $lastName
       email: $email
