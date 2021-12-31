@@ -3,6 +3,7 @@ import { useMutation } from 'glimmer-apollo';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { SIGN_UP } from '../../gql/mutations/sign-up';
+import { inject as service } from '@ember/service';
 
 export default class AdminRegisterComponent extends Component {
   @tracked firstName;
@@ -10,6 +11,8 @@ export default class AdminRegisterComponent extends Component {
   @tracked email;
   @tracked role;
   @tracked password;
+  @tracked memAnchor = 'LoveChar';
+  @service session;
 
   SignUp = useMutation(this, () => [
     SIGN_UP,
@@ -26,6 +29,7 @@ export default class AdminRegisterComponent extends Component {
   @action
   async createUser(e) {
     e.preventDefault();
+    console.log(this.session);
 
     await this.SignUp.mutate({
       firstName: this.firstName,
@@ -33,6 +37,7 @@ export default class AdminRegisterComponent extends Component {
       email: this.email,
       role: this.role,
       password: this.password,
+      memAnchor: this.memAnchor,
     });
   }
 }

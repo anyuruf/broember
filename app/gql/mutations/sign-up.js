@@ -1,7 +1,7 @@
 import { gql } from 'glimmer-apollo';
 
 export const SIGN_UP = gql`
-  mutation SignUp(
+  mutation signUp(
     $firstName: String!
     $lastName: String!
     $email: String!
@@ -9,7 +9,7 @@ export const SIGN_UP = gql`
     $role: String
     $memAnchor: ID
   ) {
-    signUP(
+    signUp(
       firstName: $firstName
       lastName: $lastName
       email: $email

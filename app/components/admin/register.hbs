@@ -1,12 +1,12 @@
 <section>
-  <h1 class='font-bold mb-4 text-2xl w-full text-center text-primary'>Please
+  <h1 class='font-bold mb-4 text-2xl w-2/3 text-center text-primary'>Please
     Register User!</h1>
   <form
     {{on 'submit' this.createUser}}
-    class='px-8 flex flex-col justify-center items-center w-full md:w-2/3'
+    class='px-8 flex flex-col justify-center items-center w-2/3'
   >
-    <Base::Zinput @label='First Name' @type='text' @value={{this.firstName}} />
-    <Base::Zinput @label='Last Name' @type='text' @value={{this.lastName}} />
+    <Base::Zinput @label='First name' @type='text' @value={{this.firstName}} />
+    <Base::Zinput @label='Last name' @type='text' @value={{this.lastName}} />
     <Base::Zinput @label='Role' @type='text' @value={{this.role}} />
     <Base::Zinput @label='Email' @type='email' @value={{this.email}} />
     <Base::Zinput @label='Password' @type='password' @value={{this.password}} />

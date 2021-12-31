@@ -5,20 +5,21 @@ import {
   createHttpLink,
 } from '@apollo/client/core';
 import { setContext } from '@apollo/client/link/context';
+import { getOwner } from '@ember/application';
 
 export default function setupApolloClient(context) {
   const session = context.lookup('service:session');
 
   const getHeaders = () => {
-    const headers = {};
+    let headers = {};
 
     if (!session.isAuthenticated) {
       return headers;
     }
 
-    const { access_token: accessToken } = session.data?.authenticated || {};
+    const { access_token } = session.data?.authenticated || {};
 
-    headers.Authorization = `Bearer ${accessToken}`;
+    headers.Authorization = `Bearer ${access_token}`;
 
     return headers;
   };
@@ -29,7 +30,7 @@ export default function setupApolloClient(context) {
   });
 
   const authLink = setContext(() => {
-    return { headers: getHeaders() };
+    return getHeaders();
   });
 
   // Cache implementation
